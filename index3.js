@@ -8,13 +8,14 @@ const port = 3000;
 //   next();
 // });
 function logger(req, res, next) {
-  console.log(req.method, req.url);
+  console.log(req.method, req.url, res.statusCode=400);
   next();
 }
 app.use(logger);
 
 app.get("/", (req, res) => {
   res.send("Hello");
+  res.statusCode;
 });
 
 app.listen(port, () => {
